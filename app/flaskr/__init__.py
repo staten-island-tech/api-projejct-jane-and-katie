@@ -30,17 +30,15 @@ def create_app(test_config=None):
     return app
 
 r = requests.get("https://pokeapi.co/api/v2/pokemon/charmander").json()
-print(r)
 
 data = requests.get("https://pokeapi.co/api/v2/pokemon?limit=150&offset=0").json()
 
 @app.route('/', methods=('GET', 'POST'))
 def getPost():
     if request.method == 'POST':
-        title = request.form['title']
-        body = request.form['body']
-        data = requests.get(f"https://pokeapi.co/api/v2/pokemon/{title}").json()
-
+        name = request.form['name']
+        data = requests.get(f"'https://api.api-ninjas.com/v1/{name}").json()
+        response = requests.get(api_url, headers={'X-Api-Key': 'YOUR_API_KEY'})
         print(request.form)
         return render_template('test.html',data=data)
     else:
