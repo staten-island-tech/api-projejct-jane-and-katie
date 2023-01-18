@@ -1,12 +1,12 @@
 body {
-    color: lightblue;
-    background-color: #ebe8f8;
+    color: black;
+    background-color: lightblue;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Manrope', sans-serif;
     text-align: center
 }
 h1, h2, h3, h4, h5 {
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5 {
   }
  
   h1 {
-    margin-top: 0;
+    margin-top: 30px;
     font-size: 3.052rem;
   }
  
@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5 {
  
 
 .button {
-    border: 4px purple;
     color: grey;
     padding: 16px 32px;
     text-align: center;
@@ -63,8 +62,32 @@ img{
     align-items: center;
     width: 900px;
     height: 280px;
-    background-color: rgb(129, 83, 131);
     border-radius: 20px;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: white;
+}
 
-  
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: lightgray;
+}
+.active {
+  background-color: lightcyan;
+}

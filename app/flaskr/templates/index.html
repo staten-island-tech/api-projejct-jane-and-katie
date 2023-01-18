@@ -1,22 +1,24 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <form method="post">
-      <label for="title">Search Cats</label>
-      <input
-        name="title"
-        id="title"
-        value="{{ request.form['title'] }}"
-        required
-      />
-      <label for="body">Body</label>
-      <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-      <input type="submit" value="Save" />
-    </form>
-  </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}
+    CATS
+{% endblock %}
+
+{% block content %}
+  <ul>
+    <li><a href="#home"><b>Home</b></a></li>
+    <li><a href="#news"><b>News</b></a></li>
+    <li><a href="#contact"><b>Contact</b></a></li>
+    <li><a class="active" href="#about"><b>About</b></a></li>
+  </ul>
+  <h1><b>Search Here!</b></h1>
+  <form method="post">
+    <label for="title">Search Cats</label>
+    <input
+      name="title"
+      id="title"
+      value="{{ request.form['title'] }}"
+      required
+    />
+    <input type="submit" value="Save" />
+  </form>
+{% endblock %}

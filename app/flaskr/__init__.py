@@ -29,6 +29,14 @@ def create_app(test_config=None):
 
     return app
 
+
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template("index.html")
+
+api_url = 'https://api.api-ninjas.com/v1/cats?name={}'.format(name)
+
 r = requests.get("https://pokeapi.co/api/v2/pokemon/charmander").json()
 
 data = requests.get("https://pokeapi.co/api/v2/pokemon?limit=150&offset=0").json()
@@ -44,6 +52,5 @@ def getPost():
     else:
         return render_template('index.html')
     
-
 if __name__=="__main__":
     app.run(debug=True)
