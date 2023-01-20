@@ -72,11 +72,10 @@ domain_index = defaultdict(list)
 r = requests.get('https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json')
 
 
-@app.route("/search", methods=['GET', 'POST'])
+@app.route("/search?name=", methods=['GET', 'POST'])
 def search():
     if not data_loaded:
         load_data()
-
 
     country = request.args.get('country')
     name = request.args.get('name')
@@ -105,10 +104,7 @@ def search():
     elif domain:
             filtered = domain_index[domain]
 
-
     return Response(json.dumps(filtered), mimetype='application/json')
-
-
 
 
 data_loaded = False
